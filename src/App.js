@@ -1,17 +1,17 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import axios from 'axios'
 import './App.css';
 
 function App() {
     const [image, setImage] = useState('')
 
-    const handleChange = () => {
+    useEffect(() => {
         axios.get('https://api.generated.photos/api/v1/faces?api_key=1VnOVaWgoNbg7LMJfMbTsg').then(res => {
             console.log(res.data)
         }).catch(err => {
             console.log(err.message)
-        })
-    }
+        });
+    });
 
     return (
         <div className="App">
