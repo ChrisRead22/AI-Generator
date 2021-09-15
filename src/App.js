@@ -6,7 +6,8 @@ function App() {
     const [image, setImage] = useState('')
 
     useEffect(() => {
-        axios.get('https://api.generated.photos/api/v1/faces?api_key=1VnOVaWgoNbg7LMJfMbTsg').then(res => {
+        axios.get('https://api.generated.photos/api/v1/faces?api_key=1VnOVaWgoNbg7LMJfMbTsg&gender=female')
+        .then(res => {
             console.log(res.data)
         }).catch(err => {
             console.log(err.message)
