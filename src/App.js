@@ -6,12 +6,13 @@ function App() {
     const [image, setImage] = useState('')
 
     useEffect(() => {
-        axios.get('https://api.generated.photos/api/v1/faces?api_key=1VnOVaWgoNbg7LMJfMbTsg&gender=female')
+        axios
+        .get('https://api.generated.photos/api/v1/faces?api_key=1VnOVaWgoNbg7LMJfMbTsg&gender=female')
         .then(res => {
-            console.log(res.data.faces[]);
+            console.log(res.data.faces[0].urls[4][512]);
         })
         .catch(err => {
-            console.log(err.message)
+            console.log(err.message);
         });
     });
 
