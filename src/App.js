@@ -5,17 +5,18 @@ import './App.css';
 function App() {
     const [image, setImage] = useState('')
 
-    useEffect(() => {
+    const handleChange = () => {
         axios
         .get('https://api.generated.photos/api/v1/faces?api_key=1VnOVaWgoNbg7LMJfMbTsg&gender=female&hair_color=gray')
+
         .then(res => {
             const uri = res.data.faces[0].urls[4][512]
-            
+            uri && setImage(uri)
         })
         .catch(err => {
             console.log(err.message);
         });
-    });
+    }
 
     return (
         <div className="App">
