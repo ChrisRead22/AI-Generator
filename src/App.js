@@ -8,8 +8,9 @@ function App() {
     useEffect(() => {
         axios.get('https://api.generated.photos/api/v1/faces?api_key=1VnOVaWgoNbg7LMJfMbTsg&gender=female')
         .then(res => {
-            console.log(res.data)
-        }).catch(err => {
+            console.log(res.data.faces[]);
+        })
+        .catch(err => {
             console.log(err.message)
         });
     });
