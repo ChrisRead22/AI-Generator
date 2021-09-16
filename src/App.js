@@ -7,7 +7,7 @@ function App() {
 
     useEffect(() => {
         axios
-        .get('https://api.generated.photos/api/v1/faces?api_key=1VnOVaWgoNbg7LMJfMbTsg&gender=female')
+        .get('https://api.generated.photos/api/v1/faces?api_key=1VnOVaWgoNbg7LMJfMbTsg&gender=female&hair_color=gray')
         .then(res => {
             console.log(res.data.faces[0].urls[4][512]);
         })
@@ -18,7 +18,8 @@ function App() {
 
     return (
         <div className="App">
-            <h1>Hello</h1>
+            <h1>AI Photo Generator</h1>
+            {image && <img src={image} alt="AI Face" />}
         </div>
     );
 }
