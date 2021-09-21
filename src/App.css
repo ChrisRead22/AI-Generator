@@ -1,0 +1,8 @@
+*{
+    background: #242424;
+    color: #fff;
+}
+
+.App {
+    display: flex;
+}
